@@ -1,90 +1,130 @@
-# Right Click Converters
+# EasyClickConverter
 
-Simple right-click context menu tools for quick media conversions on Windows. No GUI needed—just right-click any file and convert it instantly.
+**EasyClickConverter** is a lightweight Windows right-click file conversion tool that lets you convert files instantly using the context menu — **no apps to open, no Python to install, no command line required**.
 
-## What It Does
+Right-click a file, choose **“Convert with EasyClick”**, and you’re done.
 
-This collection adds convenient conversion options to your Windows right-click context menu:
+---
 
-### 🎵 Audio Conversion
-Right-click any audio file → **"Convert to mp3"**
-- Converts audio files to MP3 format (192k bitrate)
-- Works with: WAV, AAC, FLAC, OGG, WMA, M4A, AIFF, OPUS, ALAC, and more
+## Features
 
-### 🎬 Video Conversion
-Right-click any video → **"Convert to..."** with organized submenu:
-- **To .mp4** - Convert video to MP4 format (copy video stream, fast)
-- **To audio →**
-  - **To .mp3** - Extract audio as MP3 (high quality)
-  - **To .wav** - Extract audio as WAV (uncompressed, 44.1kHz)
+### Audio
+- Audio → MP3  
+- Video → MP3  
+- Video → WAV  
 
-### 📄 PDF Conversion
-Right-click any PDF → **"Convert to png"**
-- Converts each PDF page to separate PNG images
-- Perfect for extracting pages as images
+### Video
+- Video → MP4  
+- QuickTime (`.mov`) → H.264 (`.mp4`)  
 
-### Supported Formats
-**Audio:** WAV, AAC, FLAC, OGG, WMA, M4A, AIFF, OPUS, ALAC, MP2, MP1, AMR, DSD, PCM, APE, AU, RA, TTA
+### PDF
+- PDF → PNG  
+- PDF → JPG  
 
-**Video:** MKV, MOV, AVI, WMV, FLV, WebM, MPEG, MPG, M4V, 3GP, 3G2, TS, MTS, M2TS, DivX, VOB, OGV, RM, RMVB, ASF, F4V, DV, DRC, MXF, ROQ, VIV, AMV, MP4
+### Images
+- JPG / PNG → PDF (single or multi-page)
 
-**PDF:** PDF
+All conversions:
+- Support **multiple selected files**
+- Run **silently** in the background
+- Output files next to the originals
 
-## Requirements
+---
 
-Before installing, you need these programs:
+##  How It Works
 
-1. **Python 3.x** - [Download here](https://www.python.org/downloads/)
-   - ✅ Check "Add Python to PATH" during installation
+1. Install EasyClickConverter
+2. Right-click any supported file
+3. Click **Show more options** (Windows 11)
+4. Select **Convert with EasyClick**
+5. Choose the conversion you want
 
-2. **FFmpeg** - [Download here](https://ffmpeg.org/download.html)
-   - **Easy install with pip:**
-     ```bash
-     pip install ffmpeg-python
-     ```
-   - **Or download manually:** Extract and add to system PATH
+No windows. No popups. No setup after install.
 
-3. **Poppler** - [Download here](https://github.com/oschwartz10612/poppler-windows/releases/)
-   - **Easy install with conda:**
-     ```bash
-     conda install -c conda-forge poppler
-     ```
-   - **Or download manually:** Extract and add `bin` folder to system PATH
+---
+
+##  What’s Included
+
+EasyClickConverter is **fully standalone** and bundles everything it needs:
+
+- FFmpeg (audio & video conversion)
+- Poppler (PDF conversions)
+- Embedded Python runtime (via PyInstaller)
+
+ **Users do NOT need Python installed**
+
+---
+
+## System Requirements
+
+- Windows 10 or Windows 11 (64-bit for now)
+- Administrator privileges (installation only)
+
+---
+
+## Supported Formats
+
+**Input formats include (but are not limited to):**
+- Audio: WAV, FLAC, AAC, M4A, OGG, WMA
+- Video: MP4, MKV, AVI, MOV, WEBM
+- Images: JPG, JPEG, PNG
+- Documents: PDF
+
+---
 
 ## Installation
 
-1. Run `RightClickConvert_Setup.exe`
-2. The installer checks for required dependencies
-3. Files are installed to `C:\Program Files\Right Click Converters\`
-4. Context menu entries are automatically created
-5. Done! Start right-clicking files to convert them
+1. Download the latest installer from **Releases**
+2. Run the setup file
+3. Follow the installation wizard
+4. Right-click files to start converting
 
-## How to Use
+Uninstalling removes all context menu entries cleanly.
 
-1. Right-click any supported file
-2. Choose your conversion option from the menu
-3. Converted file appears in the same folder
-4. That's it!
+---
 
-**Example:**
-- Right-click `vacation.mkv` → "Convert to..." → "To .mp4"
-- Result: `vacation.mp4` created in the same folder
+## Uninstall
 
-## Technical Details
+- Open **Control Panel → Programs**
+- Uninstall **EasyClickConverter**
 
-- Uses **FFmpeg** for audio/video conversion
-- Uses **pdftoppm** (from Poppler) for PDF conversion
-- All scripts may or may not open a terminal window (`.pyw` files)
-- Context menu only appears for supported file types
-- Converted files keep the original filename with new extension
+No leftover registry entries.
 
-## Uninstallation
+---
 
-1. Windows Settings → Apps → Installed apps
-2. Find "Right Click Converters"
-3. Click Uninstall
-4. All files and registry entries are removed automatically
+## Why EasyClickConverter?
+
+- Faster than opening full converter apps
+- Cleaner than command-line tools
+- Perfect for everyday conversions
+- Privacy-friendly (100% local processing)
+
+Designed to feel like a **native Windows feature**.
+
+---
+
+## Notes
+
+- On Windows 11, custom context menu items appear under **Show more options**
+- Image → PDF output name is based on the **first selected image**
+- PDF → image conversions output one image per page
+
+---
 
 ## License
 
-Free to use and modify, but do credit me.
+This project is intended for **personal and educational use**.  
+Third-party tools (FFmpeg, Poppler) are licensed under their respective licenses.
+
+---
+
+## Credits
+
+- **leconnn** — Original creator of  
+  [Right-Click Menu Converter](https://github.com/leconnn/Right-Click-Menu-Converter),  
+  which inspired and formed the base concept for this project
+
+- FFmpeg  
+- Poppler  
+- Pillow  
+- PyInstaller  
