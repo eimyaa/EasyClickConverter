@@ -2,19 +2,44 @@ import os
 import sys
 import subprocess
 
-selected_files = sys.argv[1:]
-# print("Selected files:", selected_files)
+def resource_path(relative_path):
+    if getattr(sys, 'frozen', False):
+        base_path = os.path.dirname(sys.executable)
+    else:
+        base_path = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base_path, relative_path)
 
-# Add to this list if found more video file formats
+
+FFMPEG_PATH = resource_path(os.path.join("bin", "ffmpeg.exe"))
+
+selected_files = sys.argv[1:]
+
 video_extensions = (
-    '.mkv', '.mov', '.avi', '.wmv', '.flv', '.webm', '.mpeg', '.mpg', '.m4v', 
-    '.3gp', '.3g2', '.ts', '.mts', '.m2ts', '.divx', '.vob', '.ogv', '.rm', 
-    '.rmvb', '.asf', '.f4v', '.dv', '.drc', '.mxf', '.roq', '.viv', '.amv', 
-    '.mp2', '.mpv', 'mp4', '.m2ts'
+    '.mkv', '.mov', '.avi', '.wmv', '.flv', '.webm', '.mpeg', '.mpg', '.m4v',
+    '.3gp', '.3g2', '.ts', '.mts', '.m2ts', '.divx', '.vob', '.ogv', '.rm',
+    '.rmvb', '.asf', '.f4v', '.dv', '.drc', '.mxf', '.roq', '.viv', '.amv',
+    '.mp2', '.mpv', '.mp4'
 )
 
 for file in selected_files:
     if os.path.isfile(file) and file.lower().endswith(video_extensions):
-        print(file)
-        base, ext = os.path.splitext(file)
-        subprocess.run(['ffmpeg', '-i', f'{base+ext}', '-q:a', '0', '-map', 'a', f'{base}.mp3'])
+        base, _ = os.path.splitext(file)
+        output_file = f"{base}.mp3"
+
+        try:
+            subprocess.run(
+                [
+                    FFMPEG_PATH,
+                    "-y",
+                    "-i", file,
+                    "-vn",
+                    "-q:a", "0",
+                    "-map", "a",
+                    output_file
+                ],
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+        except subprocess.CalledProcessError:
+            print(f"Failed to extract audio from: {file}")
