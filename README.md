@@ -113,8 +113,10 @@ Designed to feel like a **native Windows feature**.
 
 ## License
 
-This project is intended for **personal and educational use**.  
-Third-party tools (FFmpeg, Poppler) are licensed under their respective licenses.
+EasyClickConverter is licensed under the MIT License.
+
+This project uses third-party tools (FFmpeg, Poppler) which are licensed under
+their respective licenses.
 
 ---
 
