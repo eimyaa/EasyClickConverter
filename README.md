@@ -4,6 +4,8 @@
 
 Right-click a file, choose **“Convert with EasyClick”**, and you’re done.
 
+<img width="510" height="219" alt="eccdemo" src="https://github.com/user-attachments/assets/f6aa3145-6f74-47db-9948-8f933b546d09" />
+
 ---
 
 ## Features
