@@ -18,6 +18,7 @@ Right-click a file, choose **“Convert with EasyClick”**, and you’re done.
 ### Video
 - Video → MP4  
 - QuickTime (`.mov`) → H.264 (`.mp4`)  
+- HEVC (`.mkv`) → H.264 (`.mp4`)  
 
 ### PDF
 - PDF → PNG  
@@ -25,6 +26,8 @@ Right-click a file, choose **“Convert with EasyClick”**, and you’re done.
 
 ### Images
 - JPG / PNG → PDF (single or multi-page)
+- HEIF → JPG 
+- HEIF → PNG 
 
 All conversions:
 - Support **multiple selected files**
@@ -49,9 +52,9 @@ No windows. No popups. No setup after install.
 
 EasyClickConverter is **fully standalone** and bundles everything it needs:
 
-- FFmpeg (audio & video conversion)
-- Poppler (PDF conversions)
-- Embedded Python runtime (via PyInstaller)
+- FFmpeg (For Audio & Video conversion)
+- Poppler (For PDF conversions)
+- Embedded Python 3 Runtime (via PyInstaller)
 
  **Users do NOT need Python installed**
 
@@ -60,7 +63,7 @@ EasyClickConverter is **fully standalone** and bundles everything it needs:
 ## System Requirements
 
 - Windows 10 or Windows 11 (64-bit for now)
-- Administrator privileges (installation only)
+- Administrator privileges (For installation only)
 
 ---
 
