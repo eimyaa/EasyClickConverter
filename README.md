@@ -4,7 +4,7 @@
 
 Right-click a file, choose **“Convert with EasyClick”**, and you’re done.
 
-<img width="510" height="219" alt="eccdemo" src="https://github.com/user-attachments/assets/f6aa3145-6f74-47db-9948-8f933b546d09" />
+<img width="501" height="282" alt="eccdemooo" src="https://github.com/user-attachments/assets/ecf41fb9-c290-44d7-8a00-7e9f99093a8b" />
 
 ---
 
