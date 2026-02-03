@@ -1,18 +1,26 @@
 [Setup]
 AppName=EasyClickConverter
-AppVersion=1.0.0
+AppVersion=1.1.0
 AppPublisher=reeziel
 AppPublisherURL=https://github.com/eimyaa
 AppUpdatesURL=https://github.com/eimyaa/RCM-Converter-Standalone/releases/
-DefaultDirName={pf}\RCM Converter
+DefaultDirName={pf}\EasyClickConverter
 DisableProgramGroupPage=yes
+DisableWelcomePage=no
+DisableDirPage=no
 UninstallDisplayIcon={app}\AudioToMP3.exe
 Compression=lzma2/ultra
 SolidCompression=yes
 PrivilegesRequired=admin
 OutputDir=output
-OutputBaseFilename=EasyClickConverter v1.0 - Setup
+OutputBaseFilename=EasyClickConverter v1.1.0 - Setup Final Candidate
 WizardStyle=modern
+SetupLogging=yes
+LicenseFile=license.txt
+
+[Messages]
+WelcomeLabel1=Welcome to the EasyClickConverter Setup
+WelcomeLabel2=This wizard will install EasyClickConverter on your computer.%n%nEasyClickConverter allows you to convert files directly from the right-click menu. No additional software or configuration is required.
 
 [Files]
 ; EXEs
@@ -27,7 +35,7 @@ Source: "dist\MOVToH264.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 ; Shared binaries (ONCE)
 Source: "bin\ffmpeg.exe"; DestDir: "{app}\bin"; Flags: ignoreversion
-Source: "bin\ffprobe.exe"; DestDir: "{app}\bin"; Flags: ignoreversion
+; Source: "bin\ffprobe.exe"; DestDir: "{app}\bin"; Flags: ignoreversion
 ; Poppler (ALL FILES)
 Source: "bin\pdftoppm.exe"; DestDir: "{app}\bin"; Flags: ignoreversion
 Source: "bin\pdftocairo.exe"; DestDir: "{app}\bin"; Flags: ignoreversion
